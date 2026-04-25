@@ -11,5 +11,14 @@ public class Main {
         Tool p = new Tool("Пила");
         box1.add(p);
         System.out.println("box1.getCounter() = " + box1.getCounter());
+
+        Photographer vasya = new Photographer("Вася");
+        box1.useAllTools(vasya);
+        box1.useAllTools(new IToolUser() {
+            @Override
+            public void useTool(Tool t) {
+                System.out.println("нечто подбрасывает "+t+" в воздух");
+            }
+        });
     }
 }

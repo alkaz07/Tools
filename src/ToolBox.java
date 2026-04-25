@@ -32,4 +32,14 @@ public class ToolBox {
         else
             System.out.println("мест нет, ящик не резиновый");
     }
+
+    //я хочу предоставить метод перебора всех инструментов в ящике, но заранее не знаю, что с ними будут делать
+
+    //мы будем перебирать инструменты только в присутствии того, кто умеет с ними работать
+    //"я знаю, что ты знаешь"
+    public void useAllTools(IToolUser user){
+        System.out.println(user + " получил доступ к "+counter+" инструментов");
+        for (Tool t: this.tools)
+            user.useTool(t);
+    }
 }
